@@ -1,0 +1,18 @@
+
+# 数据库表设计
+# 用户表(User)
+#  { id , username , password , nickname , img , email , school , photo }
+#  { 自增id , 用户名 , 密码 , 笔名 , 电话 , 邮箱 , 学校 , 照片 }
+
+
+# 文章表(Article)
+#  { id , username , title , content , create_time , img , location , read_times , attitude ,hidden }
+#  { 自增id , 发表用户名 , 文章头 , 文章内容 , 创建时间 , 所需配图 , 坐标 , 阅读次数 , 心情 , 软删除(0/1) }
+# 用户和文章 一对多关系 ， 在用户表使用外键 即可。
+
+#  图库(Img)
+#  { id , img , img_url }
+#  { 自增id , 图片 , 图片url }
+
+
+# 阿里云数据库  RDS-MYSQL 外网地址 { rm-bp13d4mewh869vg645o.mysql.rds.aliyuncs.com } mysql -hRDS + url -u root -p password -P 3306
