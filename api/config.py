@@ -13,13 +13,13 @@ class Config:
 
 # 线下开发环境
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://nick:123xiangjiang@@rm-bp13d4mewh869vg645o.mysql.rds.aliyuncs.com:3306/selfblob'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://name:passwd@xxxxxxxxxx:3306/selfblob'
     SESSION_REDIS = redis.Redis(host='127.0.0.1', port=6397, db=5)
     DEBUG = True
 
 # 线上环境
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://nick:123xiangjiang@@rm-bp13d4mewh869vg645o.mysql.rds.aliyuncs.com:3306/blob_online'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://name:passwd@xxxxxxxxxx/blob_online'
     SESSION_REDIS = redis.Redis(host='127.0.0.1', port=6397, db=6)
 
 config_mapper = {
