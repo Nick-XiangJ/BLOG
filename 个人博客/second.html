@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Dream Girl</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="css/templatemo-diagoona.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="tm-container">        
+        <div>
+            <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                        <i class="fas fa-umbrella-beach fa-3x mt-1 tm-logo"></i>
+                        <div class="media-body">
+                            <h1 class="tm-sitename text-uppercase">NickXiang</h1>
+                            <p class="tm-slogon">Share With You</p>
+                        </div>        
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                            data-toggle="collapse" data-target="#navbar-nav" 
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                            <ul class="navbar-nav text-uppercase">
+                                <li class="nav-item active">
+                                    <!--<span class="sr-only">(current)</span>-->
+                                    <a class="nav-link tm-nav-link" href="index.html">Index</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="second.html">Write</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="third.html">Items</a>
+                                </li>                            
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="fourth.html">FireShow</a>
+                                </li>
+                            </ul>                            
+                        </div>                        
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right">
+                    <section class="tm-content">
+                        <h2 class="mb-5 tm-content-title">Sharing </h2>
+                        <div class="inner">
+							<h2 class="major">记录每一天</h2>
+                            <h2 class="major">Write Down Your Feeling</h2>
+							<!--<p>若觉得我还不错，就请联系我吧，在未来的日子里，我愿将从底做起，发挥自己的主动性极能力，竭诚为公司的发展增添光彩</p>-->
+							<form >
+								<div class="field">
+									<label for="code">Code:</label>
+   								 <!--   <input type="text" name="name" id="name"/>-->
+                                    <textarea name="code" id="code" rows="1" ></textarea>
+								</div>
+								<div class="field">
+									<label for="title">Title:</label>
+   								 <!--   <input type="text" name="name" id="name"/>-->
+                                    <textarea name="title" id="title" rows="1" ></textarea>
+								</div>
+								<div class="field">
+									<label for="message">Mess:</label>
+									<textarea name="message" id="message" rows="4" ></textarea>
+								</div>
+								<ul class="actions">
+									<!--<li><input type="submit" value="发送" /></li>-->
+                                    <button  class="btn" style="background-color: lightslategray" onclick="go()">send</button>
+								</ul>
+							</form>
+						</div>
+
+                    </section>
+                </main>
+            </div>
+        </div>        
+
+        <div class="tm-row">
+            <div class="tm-col-left text-center">            
+                <ul class="tm-bg-controls-wrapper">
+                    <li class="tm-bg-control active" data-id="0"></li>
+                    <li class="tm-bg-control" data-id="1"></li>
+                </ul>            
+            </div>        
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                    <p class="mb-0">Copyright 2021 nick.com
+                    
+                    | Thanks: <a rel="nofollow" target="_parent" href="http://youtiy.com" class="tm-text-link">周末简设</a></p>
+                </footer>
+            </div>  
+        </div>
+
+        <!-- Diagonal background design -->
+        <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+	
+	<script type="text/javascript">
+				window.load = function(){
+
+                }
+				function go() {
+                    let code = document.getElementById('code').value;
+                    let message = document.getElementById('message').value;
+                    let title = document.getElementById('title').value;
+                        $.ajax({
+                            type: 'post',
+                            async: true,
+                            url: 'http://127.0.0.1:5000/hi',
+                            data: {
+                                "title": title,
+                                "code": code,
+                                "message": message
+                            },
+                            dateType: 'json',
+                            success: function (data) {
+                                console.log(data)
+                                if(data['state']=='false')
+                                    alert('error')
+                                else{
+                                    alert('Success')
+                                }
+                            },
+                            error: function (result) {
+                                console.log(result)
+                                alert('Inner error')
+                            }
+                        });
+                    }
+
+
+			</script>
+</body>
+</html>
