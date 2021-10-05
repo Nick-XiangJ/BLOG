@@ -14,7 +14,7 @@
 #  { 自增id , 图片 , 图片url ,上传用户 , 上传时间 }
 
 
-# 阿里云数据库  RDS-MYSQL 外网地址 { rm-bp13d4mewh869vg645o.mysql.rds.aliyuncs.com } mysql -hRDS + url -u root -p password -P 3306
+# 阿里云数据库  RDS-MYSQL 外网地址 { xxxxxxxxxxxx } mysql -hRDS + url -u root -p password -P 3306
 
 from api import db
 from datetime import datetime
